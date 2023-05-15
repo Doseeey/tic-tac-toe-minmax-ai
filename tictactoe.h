@@ -4,7 +4,7 @@
 #include<vector>
 #include "tictactoe.cpp"
 
-//Util
+//Util & Helper
 void print_board(char board[3][3]);
 bool is_board_full(char board[3][3]);
 
