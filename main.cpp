@@ -9,15 +9,15 @@ int main() {
     board[1][1] = AI_MARKER;
     print_board(board);
 
-    std::vector<std::pair<int, int>> pos_moves = get_possible_moves(board);
-    for (auto move : pos_moves) {
-        std::cout << move.first << move.second << "\n";
-    }
+    std::vector<std::pair<int, int>> taken_moves1 = get_taken_positions(board, AI_MARKER);
+    std::cout << is_game_won(taken_moves1);
+    board[0][0] = AI_MARKER;
+    board[2][2] = AI_MARKER;
+    print_board(board);
 
-    std::vector<std::pair<int, int>> taken_moves = get_taken_positions(board, AI_MARKER);
-    for (auto move : taken_moves) {
-        std::cout << move.first << move.second << "\n";
-    }
-        
+    std::vector<std::pair<int, int>> taken_moves2 = get_taken_positions(board, AI_MARKER);
+
+    std::cout << is_game_won(taken_moves2);
+    std::cout << get_opponent_marker('O');
     return 0;
 }
