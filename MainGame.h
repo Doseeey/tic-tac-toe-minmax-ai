@@ -8,7 +8,7 @@
 #include "Board.cpp"
 
 
-enum class GameType{MULTIPLAYER, SINGLEPLAYER, EXIT};
+enum class GameType{SINGLEPLAYER, EXIT};
 
 class MainGame {
 public:

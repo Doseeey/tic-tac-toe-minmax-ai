@@ -5,14 +5,11 @@ void MainGame::_handleMenu()
 {
 	char userInputGameType;
 
-	printf("Choose: \n'm' - vs. another person\n's' - vs. computer\n'e' - exit\n");
+	printf("Choose: \n's' - start game\n'e' - exit\n");
 	std::cin >> userInputGameType;
 	
 	switch (userInputGameType)
 	{
-	case 'm':
-		_gameType = GameType::MULTIPLAYER;
-		break;
 	case 's':
 		_gameType = GameType::SINGLEPLAYER;
 		break;
@@ -147,10 +144,6 @@ void MainGame::run()
 					_pcMove();
 				}
 			} 
-			else if (_gameType== GameType::MULTIPLAYER) 
-			{
-				_humanMove();
-			}
 			int gameEnd = _board.checkVictory();
 
 			if (gameEnd == WON_GAME || gameEnd == TIE_GAME) 
