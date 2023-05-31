@@ -8,7 +8,6 @@
 #include "Board.cpp"
 
 
-enum class GameType{SINGLEPLAYER, EXIT};
 
 class MainGame {
 public:
@@ -23,7 +22,6 @@ private:
 	void _pcMove();
 
 	Board _board;
-	GameType _gameType;
 	int _size;
 	int _inARow;
 	int _currentPlayer;

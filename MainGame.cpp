@@ -3,21 +3,6 @@
 
 void MainGame::_handleMenu() 
 {
-	char userInputGameType;
-
-	printf("Choose: \n's' - start game\n'e' - exit\n");
-	std::cin >> userInputGameType;
-	
-	switch (userInputGameType)
-	{
-	case 's':
-		_gameType = GameType::SINGLEPLAYER;
-		break;
-	case 'e':
-		exit(0);
-	default: 
-		exit(0);
-	}
 
 	printf("Game size (enter natural number from 3 to 9): ");
 	std::cin >> _size;  
@@ -133,17 +118,16 @@ void MainGame::run()
 		{		
 			_board.print();
 
-			if (_gameType == GameType::SINGLEPLAYER) 
+
+			if (_currentPlayer == _playerA) 
 			{
-				if (_currentPlayer == _playerA) 
-				{
-					_humanMove();
-				} 
-				else 
-				{
-					_pcMove();
-				}
+				_humanMove();
 			} 
+			else 
+			{
+				_pcMove();
+			}
+			
 			int gameEnd = _board.checkVictory();
 
 			if (gameEnd == WON_GAME || gameEnd == TIE_GAME) 
